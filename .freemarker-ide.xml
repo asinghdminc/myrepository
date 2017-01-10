@@ -1,0 +1,8 @@
+<config>
+	<context-values>
+	</context-values>
+	<macro-library>
+		<entry namespace="custom-reports" path="src/main/java/custom-reports.ftl" project="ONE20SmokeTest" type="file"/>
+		<entry namespace="jbehave-report-decorated" path="src/main/java/jbehave-report-decorated.ftl" project="ONE20SmokeTest" type="file"/>
+	</macro-library>
+</config>
