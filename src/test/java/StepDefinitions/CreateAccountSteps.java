@@ -153,7 +153,6 @@ public class CreateAccountSteps extends TestBaseSetup {
 		{
 			if (flag.equalsIgnoreCase("ios"))
 			iosCreateAccount.logout();
-			driver.resetApp();
 
 
 		}

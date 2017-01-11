@@ -1,9 +1,11 @@
 package com.pack.screens.Android;
 
 import org.openqa.selenium.By;
-import com.pack.base.*;
+
+import com.pack.base.DefaultGestures;
 
 import io.appium.java_client.AppiumDriver;
+import net.thucydides.core.annotations.Step;
 
 public class AndroidLogIn extends DefaultGestures{
 
@@ -16,10 +18,10 @@ public class AndroidLogIn extends DefaultGestures{
 
 	public AndroidLogIn(AppiumDriver driver) {
 		super(driver);
-		
+
 	}
 
-
+	@Step
 	public void PerformLogIn(String email, String password)
 	{
 		EnterText(emailTxt, email);
@@ -27,10 +29,12 @@ public class AndroidLogIn extends DefaultGestures{
 		TapElement(logInBtn);
 		WaitForElement(planScreenMap);
 	}
+	@Step
 	public void TapForgorLink()
 	{
 		TapElement(forgotLink);
 	}
+	@Step
 	public void TapNeedAccount()
 	{
 		TapElement(needAccountLink);

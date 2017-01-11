@@ -27,14 +27,12 @@ import org.jbehave.core.steps.ParameterControls;
 import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.SilentStepMonitor;
 import org.jbehave.core.steps.StepFinder;
-import org.junit.runner.RunWith;
 
 import com.thoughtworks.paranamer.NullParanamer;
 
 import net.serenitybdd.jbehave.SerenityStories;
-import net.serenitybdd.jbehave.runners.SerenityReportingRunner;
 
-@RunWith(SerenityReportingRunner.class)
+//@RunWith(SerenityReportingRunner.class)
 public class TestRunner extends SerenityStories{
 	private Configuration configuration;
 
@@ -90,7 +88,7 @@ public class TestRunner extends SerenityStories{
 				new UpdateTruckInfoSteps(),
 				new POIMoreInfoSteps(), 
 				new ContactUsSteps(),
-				new PartnersSteps(),
+				/*new PartnersSteps(),*/
 				new DealsSteps()
 				);
 	}
@@ -98,7 +96,7 @@ public class TestRunner extends SerenityStories{
 	public List<String> storyPaths()
 	{
 		StoryFinder finder = new StoryFinder();
-		return finder.findPaths(CodeLocations.codeLocationFromPath("src/test/resources"), "stories/2_Login.story","");
+		return finder.findPaths(CodeLocations.codeLocationFromPath("src/test/resources"), "stories/*.story","");
 
 		//return Arrays.asList("FitnessFirstSmokeTest/src/test/java/features/login.story");
 	}

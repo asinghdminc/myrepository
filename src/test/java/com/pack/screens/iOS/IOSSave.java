@@ -130,10 +130,6 @@ public class IOSSave extends DefaultGestures {
 			takeScreenShot();
 			Assert.fail("Not Sorted by Start Date");
 		}
-		finally
-		{
-			driver1.resetApp();
-		}
 	}
 	public void verifySortedByEndDate()
 	{
@@ -170,7 +166,7 @@ public class IOSSave extends DefaultGestures {
 		{
 			String date=iterator.next();
 			String [] parts=date.split(" - ");
-			String end_date=parts[0];
+			String end_date=parts[1];
 			try
 			{
 				endDate=df.parse(end_date);
@@ -206,10 +202,6 @@ public class IOSSave extends DefaultGestures {
 			takeScreenShot();
 			Assert.fail("Not Sorted by End Date");
 		}
-		finally
-		{
-			driver1.resetApp();
-		}
 	}
 	public void filterDeals()
 	{
@@ -232,6 +224,10 @@ public class IOSSave extends DefaultGestures {
 		{
 			takeScreenShot();
 			Assert.fail("Not Filtered");
+		}
+		finally
+		{
+			driver1.resetApp();
 		}
 	}
 }

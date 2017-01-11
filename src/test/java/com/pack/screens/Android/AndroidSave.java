@@ -34,17 +34,17 @@ public class AndroidSave extends DefaultGestures {
 	private DateFormat df=new SimpleDateFormat("MMM dd");
 	private Date startDate;
 	private Date endDate;
-	
+
 	int count=0;
-	
+
 	private AppiumDriver driver1;
-	
+
 
 	public AndroidSave(AppiumDriver driver, AppiumDriver driver1) {
 		super(driver);
 		this.driver1 = driver1;
 	}
-	
+
 	public void sortByStartDate()
 	{
 		WaitForElement(fiterLink);
@@ -69,14 +69,14 @@ public class AndroidSave extends DefaultGestures {
 		int endy=(int)(size.getHeight()*0.3);
 		int flag=0;
 		int startyException=(int)(size.getHeight()*0.35);
-		
+
 		ArrayList<Date> dateList=new ArrayList<Date>();
 		ArrayList<Date> dateListPreSort=new ArrayList<Date>();
 
 		ArrayList<String> allDeals=new ArrayList<String>();
 
 		Set<String> set=new LinkedHashSet<String>();
-		
+
 		try
 		{
 			driver1 .swipe(startx, starty, startx, endy, 2000);
@@ -171,7 +171,7 @@ public class AndroidSave extends DefaultGestures {
 		int endy=(int)(size.getHeight()*0.3);
 		int flag=0;
 		int startyException=(int)(size.getHeight()*0.35);
-		
+
 		ArrayList<Date> dateList=new ArrayList<Date>();
 		ArrayList<Date> dateListPreSort=new ArrayList<Date>();
 
@@ -261,7 +261,10 @@ public class AndroidSave extends DefaultGestures {
 		}
 	}
 
-	public void filterDeals() {
+
+
+	public void filterDeals() 
+	{
 		TapElement(fiterLink);
 		driver1.scrollToExact("Fitness");
 		TapElement(filterOption);
@@ -273,7 +276,7 @@ public class AndroidSave extends DefaultGestures {
 		List<WebElement> deals=driver1.findElements(By.id("offerBody"));
 		System.out.println(count);
 		System.out.println(deals.size());
-		
+
 		try
 		{
 			Assert.assertEquals(count, deals.size());

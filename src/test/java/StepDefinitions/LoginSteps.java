@@ -5,6 +5,7 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.junit.Test;
 import org.testng.Assert;
 
 import com.pack.base.TestBaseSetup;
@@ -54,7 +55,7 @@ public class LoginSteps extends TestBaseSetup {
 		tabletSignUpLogin=new TabletSignUpLogin(driver);
 		tabletLogIn=new TabletLogIn(driver);
 		tabletPlanMapView=new TabletPlanMapView(driver);
-
+		
 		if (flag.equalsIgnoreCase("android"))
 		{
 			androidsignUpLogin.WaitForLogo();
@@ -62,8 +63,14 @@ public class LoginSteps extends TestBaseSetup {
 		}
 		else if (flag.equalsIgnoreCase("ios")||flag.equalsIgnoreCase("iPHone"))
 		{
-			iosSignUpLogin.WaitForLogo();
-			iosSignUpLogin.TapHaveAccount();
+			//iosSignUpLogin.WaitForLogo();
+			//iosSignUpLogin.TapHaveAccount();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else if (flag.equalsIgnoreCase("tablet"))
 		{
@@ -97,12 +104,11 @@ public class LoginSteps extends TestBaseSetup {
 		String plandisplayed = null;
 		if (flag.equalsIgnoreCase("ios")||flag.equalsIgnoreCase("iphone"))
 		{
-			System.out.println("afsafsafsafa");
 			plandisplayed=iosPlanMapView.VerifyPlanScreen();	
 		}
 		else if (flag.equalsIgnoreCase("android"))
 		{
-			System.out.println("In android plan displayed");
+			
 			plandisplayed=androidPlanMapView.VerifyPlanScreen();
 		}
 		else if (flag.equalsIgnoreCase("tablet"))

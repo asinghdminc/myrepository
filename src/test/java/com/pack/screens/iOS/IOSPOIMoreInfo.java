@@ -38,7 +38,7 @@ public class IOSPOIMoreInfo extends DefaultGestures {
 	private By reviewsText=By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[7]/UIAStaticText[1]");
 
 	ArrayList <String> amenities_actual=new ArrayList <String>();
-	String [] expected_amenities={"Overnight Parking", "Parking Spaces (150 spots)", "Deli", "Snack / Coffee Bar", "Wendy's", "Restroom", "Private Showers", "Pump", "Travel Store", "Trucker's Store", "CAT Scales","Certified Scale"};
+	String [] expected_amenities={"Overnight Parking", "Parking Spaces", "Deli", "Snack / Coffee Bar", "Wendy's", "Restroom", "Private Showers", "Pump", "Travel Store", "Trucker's Store", "CAT Scales","Certified Scale"};
 
 
 	public IOSPOIMoreInfo(AppiumDriver driver, AppiumDriver driver1) {
@@ -138,7 +138,7 @@ public class IOSPOIMoreInfo extends DefaultGestures {
 		TapElement(navigateBtn);
 	}
 	public void readAmenities() {
-		for (int i=8; i<25;i++)
+		for (int i=8; i<29;i++)
 		{
 			try{
 				amenities_actual.add(driver1.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell["+i+"]/UIAStaticText[1]")).getText());

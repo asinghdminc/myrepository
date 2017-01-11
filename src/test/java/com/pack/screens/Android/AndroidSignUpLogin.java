@@ -1,9 +1,11 @@
 package com.pack.screens.Android;
 
 import org.openqa.selenium.By;
-import com.pack.base.*;
+
+import com.pack.base.DefaultGestures;
 
 import io.appium.java_client.AppiumDriver;
+import net.thucydides.core.annotations.Step;
 
 public class AndroidSignUpLogin extends DefaultGestures {
 	
@@ -16,6 +18,7 @@ public class AndroidSignUpLogin extends DefaultGestures {
 	{
 		super(driver);
 	}
+	@Step
 	public void TapSignUp()
 	{
 		System.out.println("In Android wala Sign Up If");
@@ -28,10 +31,12 @@ public class AndroidSignUpLogin extends DefaultGestures {
 		}
 		System.out.println("Sign Up Clicked");
 	}
+	@Step
 	public void TapHaveAccount()
 	{
 		TapElement(haveAccountLink);
 	}
+	@Step
 	public void WaitForLogo()
 	{
 		try{

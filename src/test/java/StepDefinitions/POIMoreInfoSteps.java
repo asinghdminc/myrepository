@@ -68,9 +68,10 @@ public class POIMoreInfoSteps extends TestBaseSetup {
 
 		if (flag.equalsIgnoreCase("Android"))
 		{
-			androidsignUpLogin.WaitForLogo();
-			androidsignUpLogin.TapHaveAccount();
-			androidLogIn.PerformLogIn(Constants.USER_EMAIL_ADDRESS, Constants.USER_PASSWORD);
+//			androidsignUpLogin.WaitForLogo();
+//			androidsignUpLogin.TapHaveAccount();
+//			androidLogIn.PerformLogIn(Constants.USER_EMAIL_ADDRESS, Constants.USER_PASSWORD);
+			androidPlanMapView.VerifyPlanScreen();
 		}
 		else if (flag.equalsIgnoreCase("ios")||flag.equalsIgnoreCase("iphone"))
 		{
@@ -182,6 +183,10 @@ public class POIMoreInfoSteps extends TestBaseSetup {
 		{
 			takeScreenShot();
 			Assert.fail("Address not matched");
+		}
+		finally
+		{
+			driver.resetApp();
 		}
 	}
 	@Then ("POI open hours should be $POIOpenHours")
@@ -327,9 +332,9 @@ public class POIMoreInfoSteps extends TestBaseSetup {
 		}
 
 	}
-	@AfterStory
-	public void end()
-	{
-		driver.resetApp();
-	}
+//	@AfterStory
+//	public void end()
+//	{
+//		driver.resetApp();
+//	}
 }

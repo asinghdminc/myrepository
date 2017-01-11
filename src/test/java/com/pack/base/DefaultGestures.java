@@ -164,7 +164,7 @@ public class DefaultGestures {
 	//To wait for an element
 	public void WaitForElement(By screenElement)
 	{
-		wait=new WebDriverWait(driver1, 15);
+		wait=new WebDriverWait(driver1, 10);
 		try{
 			wait.until(ExpectedConditions.visibilityOfElementLocated(screenElement));
 		}

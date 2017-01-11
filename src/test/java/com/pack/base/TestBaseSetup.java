@@ -22,7 +22,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class TestBaseSetup 
 {
 	protected static AppiumDriver driver;
-	public String flag="android";
+	public String flag="ios";
 	public DesiredCapabilities capabilities = new DesiredCapabilities();
 
 	public AppiumDriver getDriver() {
@@ -38,7 +38,7 @@ public class TestBaseSetup
 			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "06ac1be6006950e5");
 			capabilities.setCapability(MobileCapabilityType.APP_PACKAGE, "com.one20.ota");
 			capabilities.setCapability(MobileCapabilityType.APP_ACTIVITY, "com.one20.ota.activities.SplashActivity");
-			capabilities.setCapability(MobileCapabilityType.APP, "//Users//Dmi//Downloads//ONE20_QA_Android_App_original.apk");
+			capabilities.setCapability(MobileCapabilityType.APP, "//Users//Dmi//Downloads//One20.apk");
 			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 		}
 		else if (flag.equalsIgnoreCase("ios")||flag.equalsIgnoreCase("iphone"))

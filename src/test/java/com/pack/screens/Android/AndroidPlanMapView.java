@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import com.pack.base.DefaultGestures;
 
 import io.appium.java_client.AppiumDriver;
+import net.thucydides.core.annotations.Step;
 
 public class AndroidPlanMapView extends DefaultGestures {
 
@@ -36,24 +37,28 @@ public class AndroidPlanMapView extends DefaultGestures {
 			e.printStackTrace();
 		}
 	}
+	@Step
 	public void OpenSearchedPOI()
 	{
 		TapElement(searchResult);
 		WaitForElement(navigateBtn);
 	}
-
+	@Step
 	public void OpenListView()
 	{
 		TapElement(listViewBtn);
 	}
+	@Step
 	public void OpenMapLayer()
 	{
 		TapElement(mapLayerBtn);
 	}
+	@Step
 	public void TapBullsEye()
 	{
 		TapElement(bullsEyeBtn);
 	}
+	@Step
 	public String VerifyPlanScreen()
 	{
 		String flag;
@@ -68,12 +73,14 @@ public class AndroidPlanMapView extends DefaultGestures {
 		}
 		return flag;
 	}
+	@Step
 	public void openPOI2Miles()
 	{
 		TapElement(listViewBtn);
 		WaitForElement(firstPOI);
 		TapElement(firstPOI);
 	}
+	@Step
 	public void openPOI()
 	{
 		WaitForElement(poiIcon);
